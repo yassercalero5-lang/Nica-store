@@ -1,0 +1,237 @@
+/* 1. Variables y Reset */
+:root {
+    --gold: #d4af37;
+    --dark: #0a0a0a;
+    --white: #ffffff;
+    --gray-bg: #f8f9fa;
+    --shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--gray-bg);
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 2. Header y Navegación */
+header {
+    background: var(--dark);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid var(--gold);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid var(--gold);
+    object-fit: cover;
+}
+
+.brand h1 {
+    color: var(--white);
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+}
+
+.brand span { color: var(--gold); }
+
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.nav-links a:hover { color: var(--gold); }
+
+.btn-nav {
+    background: var(--gold);
+    color: black !important;
+    padding: 10px 20px;
+    border-radius: 4px;
+}
+
+/* 3. Sección Hero con Nubes */
+#hero {
+    position: relative;
+    height: 500px;
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), 
+                url('https://unsplash.com');
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    overflow: hidden;
+}
+
+.clouds {
+    position: absolute;
+    top: 0; left: 0; width: 200%; height: 100%;
+    background: url('https://transparenttextures.com');
+    opacity: 0.3;
+    animation: moveClouds 60s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes moveClouds {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+.hero-content { z-index: 10; }
+
+.badge-vip {
+    background: var(--gold);
+    color: black;
+    padding: 5px 20px;
+    font-weight: 800;
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.hero-content h1 { font-size: 3rem; margin: 15px 0; }
+.hero-content span { color: var(--gold); }
+
+.cta-hero {
+    display: inline-block;
+    border: 2px solid var(--gold);
+    color: var(--gold);
+    padding: 12px 40px;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.cta-hero:hover {
+    background: var(--gold);
+    color: black;
+}
+
+/* 4. Tarjetas de Productos */
+#productos { 
+    padding: 80px 0;
+    /* Imagen de fondo */
+    background: linear-gradient(rgba(248, 249, 250, 0.9), rgba(248, 249, 250, 0.9)), 
+                url('portada.jpeg'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Esto hace que la imagen se quede quieta al hacer scroll (Parallax) */
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--dark); /* Asegura que el título se vea bien */
+}
+
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background: var(--white);
+    border: 1px solid #eee;
+    transition: 0.4s;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--gold);
+    box-shadow: var(--shadow);
+}
+
+.img-box { position: relative; }
+.img-box img { width: 100%; height: 300px; object-fit: cover; }
+
+.tag {
+    position: absolute;
+    top: 15px; right: 15px;
+    background: var(--gold);
+    color: black;
+    padding: 5px 15px;
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+.product-info { padding: 25px; text-align: center; }
+.precio { color: var(--gold); font-size: 1.6rem; font-weight: 700; margin: 10px 0; }
+
+.btn-buy {
+    display: block;
+    background: var(--dark);
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    padding: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.btn-buy:hover { background: var(--gold); color: black; }
+
+/* 5. Footer */
+footer {
+    background: var(--dark);
+    color: var(--white);
+    padding: 60px 0 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+}
+
+.footer-form input, .footer-form textarea {
+    width: 100%; padding: 12px; margin-bottom: 10px;
+    background: #1a1a1a; border: 1px solid #333;
+    color: white; border-radius: 4px;
+}
+
+.btn-send {
+    background: var(--gold); color: black;
+    border: none; padding: 15px; width: 100%;
+    font-weight: 700; text-transform: uppercase; cursor: pointer;
+}
+
+.copy { text-align: center; margin-top: 40px; font-size: 0.7rem; opacity: 0.5; }
