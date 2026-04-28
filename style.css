@@ -1,0 +1,353 @@
+/* GENERAL */
+body { 
+    font-family: 'Poppins', sans-serif; 
+    margin: 0; 
+    background-color: #fafafa; 
+    color: #121212;
+}
+
+.container { 
+    max-width: 1100px; 
+    margin: 0 auto; 
+    padding: 0 20px; 
+}
+
+/* NAVEGACIÓN (HEADER) */
+header { 
+    background-color: #121212; 
+    color: #ffffff; 
+    padding: 15px 0; 
+    position: sticky; 
+    top: 0; 
+    z-index: 1000; 
+    box-shadow: 0 2px 10px rgba(216, 171, 5, 0.653); /* Sombra para separar del resto */
+}
+
+nav { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+.brand { 
+    display: flex; 
+    align-items: center; 
+    gap: 12px; 
+}
+
+.logo-img { 
+    height: 45px; 
+    width: 45px; 
+    object-fit: cover; 
+    border-radius: 50%; 
+    border: 2px solid #d4af37; 
+}
+
+.brand h1 { 
+    font-size: 1.4rem; 
+    letter-spacing: 1px; 
+    margin: 0;
+}
+
+.brand span { 
+    color: #d4af37; 
+}
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px; /* Esto separa INICIO de CATALOGO y de CONTACTO */
+}
+.nav-links a { 
+    color: #ffffff; 
+    text-decoration: none; 
+    font-size: 0.9rem; 
+    transition: 0.3s;
+    font-weight: 400;
+}
+.nav-links a:hover {
+    color: #d4af37; /* El enlace cambia a dorado al pasar el mouse */
+}
+
+
+.btn-nav { 
+    background-color: #d4af37; 
+    color: #121212 !important; 
+    padding: 10px 20px; /* Más espacio interno para el botón */
+    border-radius: 5px; 
+    font-weight: 600; 
+    margin-left: 10px; /* Separación extra para el botón de contacto */
+}
+
+/* SECCIÓN HERO */
+#hero { 
+    padding: 100px 0; 
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://unsplash.com') center/cover;
+    text-align: center; 
+    color: #ffffff;
+}
+
+.badge-vip { 
+    color: #d4af37; 
+    border: 1px solid #d4af37; 
+    padding: 5px 15px; 
+    border-radius: 20px; 
+    font-size: 0.7rem; 
+    letter-spacing: 2px; 
+    text-transform: uppercase;
+}
+
+#hero h1 { 
+    font-size: 3rem; 
+    margin: 20px 0; 
+}
+
+#hero h1 span { 
+    color: #d4af37; 
+}
+
+.cta-hero { 
+    background-color: #d4af37; 
+    color: #121212; 
+    padding: 12px 30px; 
+    text-decoration: none; 
+    font-weight: bold; 
+    border-radius: 5px; 
+    display: inline-block; 
+    transition: 0.3s;
+}
+.cta-herowat { 
+    background-color: #03c51d; 
+    color: #f8f8f8; 
+  -webkit-text-stroke: 0.4px rgb(0, 0, 0);
+     padding: 12px 30px;
+    padding: 12px 30px; 
+    text-decoration: none; 
+    font-weight: bold; 
+    border-radius: 5px; 
+    display: inline-block; 
+    transition: 0.3s;
+}
+.cta-heroface { 
+    background-color: #1877f2; 
+    color: #ffffff; 
+     -webkit-text-stroke: 0.4px rgb(0, 0, 0);
+    padding: 12px 30px; 
+    text-decoration: none; 
+    font-weight: bold; 
+    border-radius: 5px; 
+    display: inline-block; 
+    transition: 0.3s;
+}
+
+
+/* SECCIÓN BENEFICIOS */
+#features { 
+    padding: 60px 0; 
+}
+
+.features-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 30px; 
+    text-align: center; 
+}
+
+.feature-item i { 
+    font-size: 2.5rem; 
+    color: #d4af37; 
+    margin-bottom: 15px; 
+}
+
+.feature-item h3 {
+    margin-bottom: 10px;
+}
+
+/* CATÁLOGO DE PRODUCTOS */
+#productos { 
+    padding: 60px 0; 
+}
+
+.section-title { 
+    text-align: center; 
+    margin-bottom: 40px; 
+    font-size: 2rem; 
+}
+
+.productos-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 30px; 
+}
+
+.product-card { 
+    background-color: #ffffff; 
+    border-radius: 12px; 
+    overflow: hidden; 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05); 
+    transition: 0.3s; 
+}
+
+.product-card:hover { 
+    transform: translateY(-10px); 
+}
+
+.img-box { 
+    height: 250px; 
+    position: relative; 
+    background-color: #eee;
+}
+
+.img-box img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+}
+
+.tag { 
+    position: absolute; 
+    top: 10px; 
+    right: 10px; 
+    background-color: #d4af37; 
+    color: #121212;
+    padding: 5px 10px; 
+    font-size: 0.7rem; 
+    font-weight: bold; 
+    border-radius: 5px; 
+}
+
+.product-info { 
+    padding: 20px; 
+    text-align: center; 
+}
+.product-info h3 { 
+    margin: 15px 0 10px; 
+    font-size: 1.2rem; 
+}
+
+.precio { 
+    color: #07bf32; 
+    font-weight: bold; 
+    font-size: 1.3rem; 
+    margin: 10px 0; 
+}
+
+.btn-buy { 
+    background-color: #121212; 
+    color: #ffffff; 
+    text-decoration: none; 
+    display: block; 
+    padding: 10px; 
+    border-radius: 5px; 
+    transition: 0.3s;
+}
+
+.btn-buy:hover {
+    background-color: #25d366; /* Color WhatsApp al pasar el mouse */
+}
+
+/* FOOTER Y CONTACTO */
+footer { 
+    background-color: #121212; 
+    color: #ffffff; 
+    padding: 60px 0 20px; 
+}
+
+.footer-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 40px; 
+}
+
+.footer-form { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 10px; 
+}
+
+.footer-form input, 
+.footer-form textarea { 
+    padding: 12px; 
+    border-radius: 5px; 
+    border: none; 
+    outline: none;
+}
+
+.btn-send { 
+    background-color: #d4af37; 
+    color: #121212;
+    border: none; 
+    padding: 12px; 
+    font-weight: bold; 
+    cursor: pointer; 
+    border-radius: 5px; 
+    transition: 0.3s;
+}
+
+.copy { 
+    text-align: center; 
+    margin-top: 40px; 
+    opacity: 0.5; 
+    font-size: 0.8rem; 
+    border-top: 1px solid #333; 
+    padding-top: 20px; 
+}
+/* SECCIÓN DE BENEFICIOS VIP */
+#features {
+    padding: 80px 0;
+    background-color: #ffffff; /* Fondo limpio para resaltar los iconos */
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    text-align: center;
+}
+
+.feature-item {
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+/* Efecto al pasar el mouse */
+.feature-item:hover {
+    transform: translateY(-5px);
+}
+
+.feature-item i {
+    font-size: 3rem;
+    color: #d4af37; /* Color Dorado VIP */
+    margin-bottom: 20px;
+    display: block;
+}
+
+.feature-item h3 {
+    font-size: 1.25rem;
+    color: #121212;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+.feature-item p {
+    font-size: 0.95rem;
+    color: #666666;
+    line-height: 1.6;
+    max-width: 280px;
+    margin: 0 auto;
+}
+
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .nav-links {
+        gap: 15px;
+    }
+    .nav-links a {
+        margin-left: 0;
+    }
+}
