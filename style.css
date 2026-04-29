@@ -1,26 +1,35 @@
-/* GENERAL */
 body { 
     font-family: 'Poppins', sans-serif; 
     margin: 0; 
-    background-color: #fafafa; 
-    color: #121212;
+    background-color: #000000; 
+    color: #1c1c1c; /* Un negro ligeramente suavizado es más elegante que el negro puro */
+    
+    /* MEJORAS TIPOGRÁFICAS */
+    line-height: 1.6;           /* Da aire entre líneas para que no se vea amontonado */
+    -webkit-font-smoothing: antialiased; /* Suaviza las letras en Mac/Chrome */
+    -moz-osx-font-smoothing: grayscale;   /* Suaviza las letras en Firefox */
+    text-rendering: optimizeLegibility;   /* Mejora el dibujo de los caracteres */
+    letter-spacing: 0.2px;      /* Un toque mínimo de espacio para claridad */
 }
 
+
 .container { 
-    max-width: 1100px; 
+    max-width: 1200px; 
     margin: 0 auto; 
     padding: 0 20px; 
+  
 }
 
 /* NAVEGACIÓN (HEADER) */
 header { 
     background-color: #121212; 
     color: #ffffff; 
-    padding: 15px 0; 
-    position: sticky; 
+    padding: 18px 0; /* Un poco más de aire arriba y abajo */
+    position: sticky; /* Se queda fijo al bajar sin romper el diseño */
     top: 0; 
     z-index: 1000; 
-    box-shadow: 0 2px 10px rgba(216, 171, 5, 0.653); /* Sombra para separar del resto */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(212, 175, 55, 0.1); 
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2); /* Línea dorada sutil */
 }
 
 nav { 
@@ -36,21 +45,27 @@ nav {
 }
 
 .logo-img { 
-    height: 45px; 
-    width: 45px; 
-    object-fit: cover; 
-    border-radius: 50%; 
+    height: 48px; 
+    width: 48px; 
     border: 2px solid #d4af37; 
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+    transition: transform 0.3s ease;
+}
+.brand:hover .logo-img {
+    transform: rotate(5deg) scale(1.05); /* Pequeño movimiento al pasar el mouse */
 }
 
 .brand h1 { 
-    font-size: 1.4rem; 
-    letter-spacing: 1px; 
+    font-size: 1.6rem; 
+    font-weight: 700; /* Más grueso para autoridad */
+    letter-spacing: -0.5px; /* Estilo moderno (kerning cerrado) */
     margin: 0;
+    text-transform: uppercase;
 }
 
 .brand span { 
-    color: #d4af37; 
+    color: #d4af37;
+    font-weight: 800;
 }
 .nav-links {
     display: flex;
@@ -58,15 +73,35 @@ nav {
     gap: 25px; /* Esto separa INICIO de CATALOGO y de CONTACTO */
 }
 .nav-links a { 
-    color: #ffffff; 
+    color: #e0e0e0; 
     text-decoration: none; 
-    font-size: 0.9rem; 
-    transition: 0.3s;
-    font-weight: 400;
+    font-size: 0.85rem; /* Un poco más pequeña es más elegante */
+    font-weight: 500; 
+    text-transform: uppercase; 
+    letter-spacing: 1.2px; /* Espaciado premium */
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    padding: 5px 0;
 }
-.nav-links a:hover {
-    color: #d4af37; /* El enlace cambia a dorado al pasar el mouse */
+/* Hover: El texto brilla un poco y sale la línea */
+.nav-links a:hover { 
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
 }
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #d4af37;
+    transition: width 0.3s ease;
+}
+.nav-links a:hover::after {
+    width: 100%;
+}
+
 
 
 .btn-nav { 
@@ -81,9 +116,10 @@ nav {
 /* SECCIÓN HERO */
 #hero { 
     padding: 100px 0; 
-    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://unsplash.com') center/cover;
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('portada\ hogareña\ 2.jpeg') center/cover;
     text-align: center; 
     color: #ffffff;
+    
 }
 
 .badge-vip { 
@@ -114,6 +150,8 @@ nav {
     border-radius: 5px; 
     display: inline-block; 
     transition: 0.3s;
+        border-radius: 20px; /* Esto redondea las esquinas */
+    overflow: hidden;   
 }
 .cta-herowat { 
     background-color: #03c51d; 
@@ -126,6 +164,8 @@ nav {
     border-radius: 5px; 
     display: inline-block; 
     transition: 0.3s;
+        border-radius: 20px; /* Esto redondea las esquinas */
+    overflow: hidden;   
 }
 .cta-heroface { 
     background-color: #1877f2; 
@@ -137,30 +177,68 @@ nav {
     border-radius: 5px; 
     display: inline-block; 
     transition: 0.3s;
+        border-radius: 20px; /* Esto redondea las esquinas */
+    overflow: hidden;   
 }
 
 
 /* SECCIÓN BENEFICIOS */
 #features { 
-    padding: 60px 0; 
+    color: #f8f5f5;
+    padding: 100px 0; 
+    /* Cambia 'tu-imagen.jpg' por la ruta de tu foto */
+    background: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0)), url('fondo-textura.jpg') center/cover;
+    background-attachment: fixed; /* Esto da un efecto de movimiento (parallax) profesional */
 }
+
 
 .features-grid { 
     display: grid; 
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
-    gap: 30px; 
-    text-align: center; 
+    gap: 40px; 
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.feature-item {
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 15px;
+    transition: all 0.3s ease; /* Suaviza el movimiento */
+    box-shadow: 0 10px 30px rgba(181, 147, 14, 0.897); /* Sombra suave */
+}
+
+/* Efecto al pasar el mouse (Hover) */
+.feature-item:hover {
+    transform: translateY(-10px); /* Sube la tarjeta */
+    box-shadow: 0 15px 45px rgba(205, 158, 6, 0.651); /* Sombra con el color dorado */
 }
 
 .feature-item i { 
-    font-size: 2.5rem; 
+    font-size: 3rem; 
     color: #d4af37; 
-    margin-bottom: 15px; 
+    margin-bottom: 20px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+/* El icono también reacciona */
+.feature-item:hover i {
+    transform: scale(1.1); /* Agranda un poco el icono */
 }
 
 .feature-item h3 {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    color: #333;
 }
+
+.feature-item p {
+    color: #ffffff;
+    line-height: 1.6;
+}
+
 
 /* CATÁLOGO DE PRODUCTOS */
 #productos { 
@@ -168,6 +246,7 @@ nav {
 }
 
 .section-title { 
+    color: #e0e0e0;
     text-align: center; 
     margin-bottom: 40px; 
     font-size: 2rem; 
@@ -219,10 +298,7 @@ nav {
     padding: 20px; 
     text-align: center; 
 }
-.product-info h3 { 
-    margin: 15px 0 10px; 
-    font-size: 1.2rem; 
-}
+
 
 .precio { 
     color: #07bf32; 
